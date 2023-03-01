@@ -8,6 +8,9 @@ import org.springframework.stereotype.Repository;
 import br.com.nullbank.models.User;
 
 @Repository
-public interface UserRepository extends JpaRepository<User, UUID>{
+public interface UserRepository extends JpaRepository<User, UUID> {
 
+	boolean existsById(UUID id);
+
+	boolean existsByCpf(String cpf);
 }
